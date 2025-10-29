@@ -1,0 +1,167 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+  <a class="navbar-brand" href="#">Aidan Vargas</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <!-- routerLinkActiveOptions: { exact: true } asegura que 'Inicio' solo esté activo en la ruta raíz '/' -->
+        <a class="nav-link" routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/servicios" routerLinkActive="active">Nuestros Servicios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contacto" routerLinkActive="active">Contáctame</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Aquí se cargan dinámicamente los componentes de ruta (Inicio, Nosotros, etc.) -->
+<router-outlet></router-outlet>
+
+<!-- Contenedor principal para un mejor espaciado -->
+<div class="container my-5">
+
+  <h2 class="text-primary text-bold">Directivas de Atributos</h2>
+
+  <!-- Sección: ngClass -->
+  <div class="card p-3 my-4">
+    <h5 class="card-title">Directiva: ngClass</h5>
+    <p class="card-text">Activa las clases según el estado de las variables (<code>isColor</code>: {{ isColor }}, <code>isBackground</code>: {{ isBackground }})</p>
+    <div [ngClass]="{ 'text-success': isColor, 'bg-info': isBackground, 'p-2 rounded': true }">
+      Texto con estilo dinámico
+    </div>
+  </div>
+
+  <!-- Sección: ngStyle -->
+  <div class="card p-3 my-4">
+    <h5 class="card-title">Directiva: ngStyle</h5>
+    <p class="card-text">Aplica estilos en línea según las variables.</p>
+    <div [ngStyle]="{ 'color': fontColor, 'font-size.px': fontSize, 'font-weight': 'bold' }">
+      Texto con estilo dinámico (Color: {{ fontColor }}, Tamaño: {{ fontSize }}px)
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Sección: Pipe Personalizado -->
+  <div class="card p-3 my-4 bg-light">
+    <h2 class="card-title text-success">Uso de Pipe Personalizado</h2>
+    <h5 class="card-subtitle mb-2 text-muted">Pipe: desarrolladorMayuscula</h5>
+    <p class="card-text">Transforma el valor de una variable a mayúsculas usando la lógica definida en el Pipe.</p>
+
+    <!-- Demostración del Pipe -->
+    <p class="fw-bold">Nombre del Desarrollador:</p>
+    <p>Nombre original (variable): <span class="text-secondary">{{ desarrollador }}</span></p>
+    <p>Nombre transformado (Pipe): <span class="text-success">{{ desarrollador | desarrolladorMayuscula }}</span></p>
+  </div>
+
+  <hr>
+
+  <!-- Sección: routerLink -->
+  <div class="card p-3 my-4">
+    <h5 class="card-title">Directiva: routerLink</h5>
+    <p class="card-text">Enlaza a otras rutas internas sin recargar la página.</p>
+    <a [routerLink]="['/home']" class="btn btn-sm btn-outline-primary">Ir a Home (Ruta /home)</a>
+  </div>
+
+  <!-- Sección: disabled -->
+  <div class="card p-3 my-4">
+    <h5 class="card-title">Directiva: disabled (Property Binding)</h5>
+    <p class="card-text">Deshabilita el botón si <code>isDisabled</code> es verdadero: ({{ isDisabled }})</p>
+    <!-- Se usa [disabled] que es la forma moderna de Angular -->
+    <button [disabled]="isDisabled" class="btn btn-danger w-auto">Submit</button>
+  </div>
+
+  <!-- Sección: title -->
+  <div class="card p-3 my-4">
+    <h5 class="card-title">Directiva: title (Attribute Binding)</h5>
+    <p class="card-text">Pone texto dinámico al pasar el mouse (tooltip) según la variable.</p>
+    <button [title]="tooltipText" class="btn btn-secondary w-auto">Pon el mouse encima</button>
+  </div>
+
+  <!-- Sección: click (Event Binding) -->
+  <div class="card p-3 my-4">
+    <h5 class="card-title">Directiva: click (Evento)</h5>
+    <p class="card-text">Ejecuta una función al hacer clic.</p>
+    <button (click)="handleClick()" class="btn btn-success w-auto">Clickeame</button>
+  </div>
+
+  <!-- Sección: keyup y keydown (Event Binding) -->
+  <div class="card p-3 my-4">
+    <h5 class="card-title">Directiva: keyup y keydown (Eventos de Teclado)</h5>
+    <p class="card-text">Captura los eventos de teclado: <strong>{{key}}</strong></p>
+    <input (keyup) = "onKeyUp($event)" (keydown) = "onKeyDown($event)" class="form-control w-50" placeholder="Escribe aquí...">
+  </div>
+
+  <!-- Sección: ngModel y ngModelChange (Two-Way Binding) -->
+  <div class="card p-3 my-4">
+    <h5 class="card-title">Directiva ngModel (Two-Way Binding)</h5>
+    <p class="card-text">El nombre es: <strong>{{name}}</strong></p>
+    <input [(ngModel)]="name" (ngModelChange)="onNameChange($event)" class="form-control w-50" placeholder="Cambia el nombre">
+  </div>
+
+  <hr class="my-5">
+
+  <h2 class="text-primary text-bold">Directivas de Estructura</h2>
+
+  <!-- Sección: ngIf -->
+  <div class="card p-3 my-4">
+    <h5 class="card-title">Directiva: ngIf</h5>
+    <p class="card-text">Hace la condicional <code>if/else</code>. (<code>isVisible</code> es {{ isVisible }})</p>
+
+    <div *ngIf="isVisible; else noContent" class="alert alert-success">
+      <p>Este contenido se muestra si <code>isVisible</code> es verdadero.</p>
+    </div>
+    <ng-template #noContent>
+      <div class="alert alert-warning">
+        <p>Contenido alternativo cuando <code>isVisible</code> es falso.</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <!-- Sección: ngFor -->
+  <div class="card p-3 my-4">
+    <h5 class="card-title">Directiva: ngFor</h5>
+    <p class="card-text">Hace un bucle for sobre la lista de ítems.</p>
+    <ul class="list-group w-50">
+      <li *ngFor="let item of items" class="list-group-item">{{ item }}</li>
+    </ul>
+  </div>
+
+  <!-- Sección: ngSwitch -->
+  <div class="card p-3 my-4">
+    <h5 class="card-title">Directiva: ngSwitch</h5>
+    <p class="card-text">Muestra contenido basado en el valor de <code>value</code> (Valor actual: '{{ value }}')</p>
+    <div [ngSwitch]="value" class="alert alert-info p-3">
+      <div *ngSwitchCase="'case1'">Escogido Case 1</div>
+      <div *ngSwitchCase="'case2'">Escogido Case 2</div>
+      <div *ngSwitchDefault> Default case </div>
+    </div>
+  </div>
+
+  <!-- Sección: ngTemplateOutlet -->
+  <div class="card p-3 my-4">
+    <h5 class="card-title">Directiva: ngTemplateOutlet</h5>
+    <p class="card-text">Crea una estructura y la reutiliza las veces que se desee.</p>
+
+    <ng-template #template>
+      <div class="border border-secondary p-2 m-1 bg-light">
+        Contenido dinámico y reutilizable aquí.
+      </div>
+    </ng-template>
+
+    <div class="d-flex">
+      <div *ngTemplateOutlet="template"></div>
+      <div *ngTemplateOutlet="template"></div>
+    </div>
+  </div>
+
+</div>

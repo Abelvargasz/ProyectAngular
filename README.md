@@ -55,3 +55,9 @@ ng e2e
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+El presente proyecto fue desarrollado utilizando Angular, un framework moderno de desarrollo web basado en TypeScript que permite crear aplicaciones dinámicas, modulares y de alto rendimiento.
+
+El objetivo principal del proyecto es construir una interfaz interactiva y eficiente, aplicando componentes reutilizables, servicios, rutas y comunicación entre vistas para ofrecer una experiencia fluida al usuario.
+
+Gracias a la estructura escalable de Angular, se logra una mejor organización del código, facilidad de mantenimiento y compatibilidad con otras herramientas del ecosistema web. Además, el proyecto integra formularios reactivos, directivas, eventos y enlaces de datos, demostrando el uso de buenas prácticas en el desarrollo front-end.

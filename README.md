@@ -61,3 +61,16 @@ El presente proyecto fue desarrollado utilizando Angular, un framework moderno d
 El objetivo principal del proyecto es construir una interfaz interactiva y eficiente, aplicando componentes reutilizables, servicios, rutas y comunicación entre vistas para ofrecer una experiencia fluida al usuario.
 
 Gracias a la estructura escalable de Angular, se logra una mejor organización del código, facilidad de mantenimiento y compatibilidad con otras herramientas del ecosistema web. Además, el proyecto integra formularios reactivos, directivas, eventos y enlaces de datos, demostrando el uso de buenas prácticas en el desarrollo front-end.
+
+
+🧠 Importancia
+
+Implementar protocolos de seguridad es esencial para:
+
+Prevenir robos de información y accesos indebidos.
+
+Cumplir con normas de protección de datos.
+
+Mantener la confianza del usuario y la integridad del sistema.
+
+Evitar vulnerabilidades como ataques de tipo phishing, man-in-the-middle o inyección de código.

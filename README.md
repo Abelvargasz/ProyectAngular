@@ -61,3 +61,21 @@ El presente proyecto fue desarrollado utilizando Angular, un framework moderno d
 El objetivo principal del proyecto es construir una interfaz interactiva y eficiente, aplicando componentes reutilizables, servicios, rutas y comunicación entre vistas para ofrecer una experiencia fluida al usuario.
 
 Gracias a la estructura escalable de Angular, se logra una mejor organización del código, facilidad de mantenimiento y compatibilidad con otras herramientas del ecosistema web. Además, el proyecto integra formularios reactivos, directivas, eventos y enlaces de datos, demostrando el uso de buenas prácticas en el desarrollo front-end.
+
+
+🔐 Protocolos de Seguridad
+
+Validación de usuarios (login seguro con JWT o sesiones).
+
+Protección contra inyección SQL y XSS.
+
+Cifrado de contraseñas (bcrypt).
+
+HTTPS y políticas de seguridad de cabeceras.
+
+👩‍💻 Equipo de Desarrollo
+Nombre	Rol	Responsabilidad
+[Tu nombre]	Desarrollador(a) Frontend	Diseño de UI, estructura Angular
+[Integrante 2]	Backend	API REST y conexión con base de datos
+[Integrante 3]	QA / Tester	Pruebas de integración y funcionalidad
+[Integrante 4]	UX/UI	Diseño de pantallas y experiencia del usuario

@@ -2,6 +2,8 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
 
+Las bases para usar Angular incluyen el conocimiento de JavaScript y TypeScript, ya que Angular es un framework basado en estos lenguajes. La arquitectura se fundamenta en componentes y módulos, que se organizan lógicamente para crear aplicaciones escalables. Es esencial entender cómo funcionan los componentes (vistas con HTML y lógica de TypeScript), servicios (para lógica de negocio) y la inyección de dependencias, además de familiarizarse con el Angular CLI para crear y gestionar proyectos. 
+
 ## Development server
 
 To start a local development server, run:
